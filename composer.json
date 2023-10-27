@@ -1,0 +1,35 @@
+{
+    "name": "cscart/blog",
+    "description": "Simple blog add-on",
+    "type": "cscart-addon",
+    "license": "MIT",
+    "version": "0.1",
+    "require": {
+        "php": "^8.0",
+        "cscart/framework": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CSCart\\Blog\\": "src/",
+            "CSCart\\Blog\\Seeders\\": "database/seeders",
+            "CSCart\\Blog\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CSCart\\Blog\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "cscart": {
+            "name": "Blog",
+            "providers": [
+                "\\CSCart\\Blog\\Providers\\BlogServiceProvider"
+            ],
+            "installer": "\\CSCart\\Blog\\Installer",
+            "uninstaller": "\\CSCart\\Blog\\Installer"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
